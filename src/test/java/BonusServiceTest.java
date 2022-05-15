@@ -30,7 +30,7 @@ public class BonusServiceTest {
     void shouldCalcBonusIfHugeAmountNotRegistered() {
         BonusService service = new BonusService();
 
-        long actual = service.calculate(10_000_000, true);
+        long actual = service.calculate(10_000_000,false);
         long expected = 500;
 
         assertEquals(expected, actual);
@@ -40,7 +40,7 @@ public class BonusServiceTest {
     void shouldCalculateForNotRegisteredAndUnderLimit() {
         BonusService service = new BonusService();
 
-        long actual = service.calculate(1000, true);
+        long actual = service.calculate(1000,false);
         long expected = 0;
 
         assertEquals(expected, actual);
